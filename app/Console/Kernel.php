@@ -5,6 +5,8 @@ namespace App\Console;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
+use App\Http\Controllers\VideoListController;
+
 class Kernel extends ConsoleKernel
 {
     /**
@@ -13,6 +15,13 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule): void
     {
         // $schedule->command('inspire')->hourly();
+        // $schedule->call(function(){
+        //     $getVideodata = new VideoListController;
+        //     //$getVideodata->getYoutubeVideo();
+        //     $getVideodata->getChzzkVideo();
+        // })->everyMinute();
+        $schedule->call([VideoListController::class, 'getYoutubeVideo'])->everyMinute();
+        $schedule->call([VideoListController::class, 'getChzzkVideo'])->everyMinute();
     }
 
     /**

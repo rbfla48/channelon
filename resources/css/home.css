@@ -1,0 +1,271 @@
+body {
+    background-color: #141517;
+    color:#fff;
+}
+
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #141517;
+    box-shadow: 0 0 3px #000;
+    z-index: 20;
+    color:#fff;
+}
+
+.header__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 80px;
+    padding: 0 16px;
+}
+
+.header__start {
+    height: 50px;
+    line-height: 40px;
+}
+
+.header__hamburger {
+    border: none;
+    background-color: transparent;
+    font-size: 1.5rem;
+    color: #fff;
+}
+
+.header__title {
+    font-size: 1.2rem;
+    margin-left: 6px;
+}
+
+.header__center {
+    width: 50%;
+}
+
+.header__form {
+    display: flex;
+    max-width: 100%;
+}
+
+.header__input--text {
+    width: calc(100%);
+    height: 40px;
+    padding: 0 20px;
+    border: 2px solid #8f8f8f;
+    border-radius: 25px 25px 25px 25px;
+    background-color: #141517;
+    color:#fff;
+    font-size: 1.0rem;
+    font-weight: bold;
+}
+
+.header__input--button {
+    width: 60px;
+    height: 40px;
+    border: 1px solid #8f8f8f;
+    border-left: none;
+    border-radius: 0 2px 2px 0;
+}
+
+.header__end {
+    display: flex;
+}
+
+.header__search {
+    display: none;
+    margin-right: 5px;
+    border: none;
+    background-color: transparent;
+    font-size: 1.5rem;
+}
+
+.header__profile {
+    width: 40px;
+    height: 40px;
+    border: 1px solid #eaeaea;
+    border-radius: 50%;
+    background-color: tomato;
+    /* background-image: url(../imgs/1.png);
+    background-size: 40px 40px; */
+}
+
+@media screen and (max-width: 800px) {
+    .header__title {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .header__center {
+        display: none;
+    }
+
+    .header__search {
+        display: block;
+    }
+}
+
+.nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+
+.nav__wrapper {
+    min-width: 200px;
+    min-height: 100vh;
+    background-color: #141517;
+    color:#fff;
+    padding: 80px 0 0 0;
+    list-style: none;
+}
+
+.nav__wrapper li {
+    display: flex;
+    padding: 10px 16px 10px;
+}
+
+.nav__wrapper li:hover {
+    background-color: #8f8f8f;
+}
+
+.nav__icon {
+    border: none;
+    background-color: transparent;
+}
+
+.nav__menu {
+    margin: 0 0 0 8px;
+    border: none;
+    background-color: transparent;
+    color:#fff;
+    font-size: 1.0rem;
+    font-weight: bold;
+}
+
+@media screen and (max-width: 800px) {
+    .nav__menu {
+        display: none;
+    }
+
+    .nav__wrapper {
+        min-width: 0;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .nav__wrapper {
+        display: none;
+    }
+}
+
+.thumbs__text--title {
+    font-size: 1.2rem;
+    margin-bottom: 0.5em;
+    overflow: hidden;
+    /*텍스트는 줄바꿈을 하기 때문에 높이를 지정을 해줘야 합니다. */
+    white-space: nowrap;
+    /*공백이나 엔터를 병합한다. 공백이나 엔터가 있어도 하나로 한다.*/
+    text-overflow: ellipsis;
+    /*넘치는 부분은 ... 으로 표시된다.*/
+
+}
+
+.thumbs__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    /* 1차원 정렬을 여러 행으로 할 수 있다! */
+    justify-content: space-between;
+    margin: 60px 0 0px 200px;
+    padding: 20px 0 0 10px;
+}
+
+.thumbs__item {
+    width: 18%;
+    margin: 0 0 50px 0;
+    padding: 0 10px;
+}
+
+.thumbs__area {
+    overflow:hidden;
+    margin:0 auto;
+}
+
+.thumbs__thumbnail {
+    max-width: 100%;
+    max-height: 189px;
+    margin: 0 0 10px 0;
+    border-radius: 5%;
+}
+
+.thumbs__info {
+    display: flex;
+}
+
+.thumbs__profile {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-image: url(/imgs/cat.jpg);
+    background-size: 50px;
+
+}
+
+.thumbs__text {
+    width: calc(100% - 36px);
+    padding-left: 10px;
+}
+
+.thumbs__text--title {
+    font-size: 1.0rem;
+    margin-bottom: 0.5em;
+    overflow: hidden;
+    /*텍스트는 줄바꿈을 하기 때문에 높이를 지정을 해줘야 합니다. */
+    white-space: nowrap;
+    /*공백이나 엔터를 병합한다. 공백이나 엔터가 있어도 하나로 한다.*/
+    text-overflow: ellipsis;
+    /*넘치는 부분은 ... 으로 표시된다.*/
+    margin-top: 1px;
+}
+
+.thumbs__text--owner {
+    font-size: 1rem;
+    color: #aeaeae;
+    margin-bottom: 0.2em;
+    margin-top: 1px;
+}
+
+.thumbs__text--anal {
+    font-size: 0.9rem;
+    color: #aeaeae;
+}
+
+@media screen and (max-width: 1000px) {
+    .thumbs__item {
+        width: 33%;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .thumbs__wrapper {
+        margin: 60px 0 0 60px;
+    }
+
+    .thumbs__item {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .thumbs__wrapper {
+        margin: 60px 0 0 0;
+        padding: 20px 0 0 0;
+    }
+
+    .thumbs__item {
+        width: 100%;
+    }
+}
