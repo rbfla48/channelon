@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\DailyRankVideo;
+use App\Jobs\FetchAfricaVod;
 
 class VideoListController extends Controller
 {
@@ -97,6 +98,14 @@ class VideoListController extends Controller
         } catch (Exception $e) {
             Log::debug($e->getMessage());
         }
+    }
+
+    //아프리카TV VOD 크롤링 수집
+    public static function getAfricaVodList(): void
+    {
+        $url = 'https://vod.afreecatv.com/'; // URL, where you want to fetch the content
+   
+        FetchAfricaVod::dispatch((string)$url);
     }
 
 }

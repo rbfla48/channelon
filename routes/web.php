@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\VideoListController;
 use Illuminate\Support\Facades\Route;
 use App\Models\DailyRankVideo;
 use Illuminate\Support\Facades\DB;
@@ -36,7 +37,13 @@ Route::get('/', function () {
 Route::get('/home', function () {
     //$data = new DailyRankVideo;
     //$data->find(1)->get();
-    $data = DB::table('daily_rank_video')->where('type','=','youtube')->get();
+    $data = DB::table('daily_rank_video')->where('type','=','chzzk')->get();
     return view('home',['data'=>$data]);
 });
+
+// 아프리카 동적생성페이지 크롤링불가로 보류.
+Route::get('/getAfricaVodList', function () {
+    $vrd = new VideoListController;
+    $vrd->getAfricaVodList();
+})->name('getAfricaVodList');
 
