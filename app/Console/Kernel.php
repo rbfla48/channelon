@@ -6,6 +6,7 @@ use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
 use App\Http\Controllers\VideoListController;
+use App\Http\Controllers\StreamerListController;
 
 class Kernel extends ConsoleKernel
 {
@@ -20,8 +21,12 @@ class Kernel extends ConsoleKernel
         //     //$getVideodata->getYoutubeVideo();
         //     $getVideodata->getChzzkVideo();
         // })->everyMinute();
-        $schedule->call([VideoListController::class, 'getYoutubeVideo'])->everyMinute();
-        $schedule->call([VideoListController::class, 'getChzzkVideo'])->everyMinute();
+        
+        //동영상 수집
+        $schedule->call([VideoListController::class, 'getYoutubeVideo'])->hourly();
+        $schedule->call([VideoListController::class, 'getChzzkVideo'])->hourly();
+        //채널정보 수집
+        $schedule->call([StreamerListController::class, 'storeStreamerData'])->daily();
     }
 
     /**
