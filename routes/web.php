@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\VideoListController;
 use App\Http\Controllers\StreamerListController;
+use App\Http\Controllers\LiveListController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 use App\Models\DailyRankVideo;
@@ -19,9 +20,9 @@ use Illuminate\Support\Facades\DB;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 // Route::get('/dashboard', function () {
 //     return view('dashboard');
@@ -36,13 +37,11 @@ Route::get('/', function () {
 // require __DIR__.'/auth.php';
 
 
-Route::get('/home', [HomeController::class, 'index']);
+Route::get('/', [HomeController::class, 'index']);
 
+Route::get('/liveList', [LiveListController::class, 'getLiveList']);
 
-
-Route::get('/storeStreamerData', [StreamerListController::class, 'storeStreamerData']);
-
-// 아프리카 동적생성페이지 크롤링불가로 보류.
+// TEST, 아프리카 동적생성페이지 크롤링불가로 보류.
 // Route::get('/getAfricaVodList', function () {
 //     $vrd = new VideoListController;
 //     $vrd->getAfricaVodList();
