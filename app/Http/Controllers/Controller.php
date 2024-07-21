@@ -9,5 +9,5 @@ use Illuminate\Routing\Controller as BaseController;
 class Controller extends BaseController
 {
     use AuthorizesRequests, ValidatesRequests;
-    //코드 추가....
+    //코드 피쳐브랜치 변경
 }
