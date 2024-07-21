@@ -10,4 +10,5 @@ class Controller extends BaseController
 {
     use AuthorizesRequests, ValidatesRequests;
     //코드 피쳐브랜치 변경
+    //ㅇㄴㄹㄴㅇㄹㄴㅇㄹㄴㅇ
 }
